@@ -17,11 +17,6 @@ public class CurrencyTextField: UITextField {
         case Frame(CGRect)
     }
 
-    public enum NumberType {
-        case Integer
-        case Double(maximumFractionDigits: Int)
-    }
-
     // MARK: Properties
 
     public let currencyFormatter: NSNumberFormatter
@@ -46,7 +41,7 @@ public class CurrencyTextField: UITextField {
     private init(_ initMethod: InitMethod) {
         self.currencyFormatter = NSNumberFormatter()
         self.internalNumberFormatter = NSNumberFormatter()
-        
+
         internalNumberFormatter.minimumFractionDigits = currencyFormatter.minimumFractionDigits
         internalNumberFormatter.maximumFractionDigits = currencyFormatter.maximumFractionDigits
 
