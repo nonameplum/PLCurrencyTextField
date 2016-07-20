@@ -125,7 +125,7 @@ public class CurrencyTextField: UITextField {
 
     // MARK: Public
 
-    var numberValue: NSNumber? {
+    public var numberValue: NSNumber? {
         guard let textValue = text,
             numberValue = currencyFormatter.numberFromString(textValue) else { return nil }
 
