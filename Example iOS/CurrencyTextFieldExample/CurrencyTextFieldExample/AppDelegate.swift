@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CurrencyTextField
+//  CurrencyTextFieldExample
 //
-//  Created by Macbook on 20/07/16.
+//  Created by Macbook on 21/07/16.
 //  Copyright © 2016 Plum's organization. All rights reserved.
 //
 

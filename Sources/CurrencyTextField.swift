@@ -10,18 +10,29 @@ import UIKit
 
 public class CurrencyTextField: UITextField {
 
-    // MARK: Types
+    // MARK: - Types
 
     private enum InitMethod {
         case Coder(NSCoder)
         case Frame(CGRect)
     }
 
-    // MARK: Properties
+    // MARK: - Properties
 
-    public let currencyFormatter: NSNumberFormatter
+    private let currencyFormatter: NSNumberFormatter
     private let internalNumberFormatter: NSNumberFormatter
 
+    // MARK: Public
+
+    /// Returns current number value
+    public var numberValue: NSNumber? {
+        guard let textValue = text,
+            numberValue = currencyFormatter.numberFromString(textValue) else { return nil }
+
+        return numberValue
+    }
+
+    /// Configure the minium fraction digits count that will be used by the internal number formatter
     public var minimumFractionDigits: Int {
         didSet {
             currencyFormatter.minimumFractionDigits = minimumFractionDigits
@@ -29,6 +40,7 @@ public class CurrencyTextField: UITextField {
         }
     }
 
+    /// Configure the maximum fraction digits count that will be used by the internal number formatter
     public var maximumFractionDigits: Int {
         didSet {
             currencyFormatter.maximumFractionDigits = maximumFractionDigits
@@ -36,11 +48,24 @@ public class CurrencyTextField: UITextField {
         }
     }
 
-    // MARK: Initialization
+    /// Configure local that will be used by the internal number formatter
+    public var locale: NSLocale {
+        didSet {
+            currencyFormatter.locale = locale
+            internalNumberFormatter.locale = locale
+        }
+    }
+
+    // MARK: - Initialization
 
     private init(_ initMethod: InitMethod) {
         self.currencyFormatter = NSNumberFormatter()
         self.internalNumberFormatter = NSNumberFormatter()
+        self.locale = self.currencyFormatter.locale
+
+        currencyFormatter.numberStyle = .CurrencyStyle
+        internalNumberFormatter.numberStyle = .DecimalStyle
+        internalNumberFormatter.groupingSeparator = ""
 
         internalNumberFormatter.minimumFractionDigits = currencyFormatter.minimumFractionDigits
         internalNumberFormatter.maximumFractionDigits = currencyFormatter.maximumFractionDigits
@@ -54,9 +79,6 @@ public class CurrencyTextField: UITextField {
         }
 
         keyboardType = .DecimalPad
-        currencyFormatter.numberStyle = .CurrencyStyle
-        internalNumberFormatter.numberStyle = .DecimalStyle
-        internalNumberFormatter.groupingSeparator = ""
 
         addTarget(self, action: #selector(textFieldEditingDidBegin(_:)), forControlEvents: UIControlEvents.EditingDidBegin)
         addTarget(self, action: #selector(textFieldEditingChanged(_:)), forControlEvents: UIControlEvents.EditingChanged)
@@ -71,7 +93,7 @@ public class CurrencyTextField: UITextField {
         self.init(.Coder(aDecoder))
     }
 
-    // MARK: Actions
+    // MARK: - Actions
 
     internal func textFieldEditingDidBegin(sender: UITextField) {
         guard let value = numberValue else { return }
@@ -91,7 +113,7 @@ public class CurrencyTextField: UITextField {
                     currencyFormatter.decimalSeparator,
                     options: NSStringCompareOptions.BackwardsSearch,
                     range: textValue.startIndex..<textValue.endIndex,
-                    locale: NSLocale.currentLocale())
+                    locale: currencyFormatter.locale)
 
                 decimalFixedValue = textValue.stringByReplacingOccurrencesOfString(
                     currencyFormatter.decimalSeparator,
@@ -121,15 +143,6 @@ public class CurrencyTextField: UITextField {
             value = internalNumberFormatter.numberFromString(textValue) else { return }
 
         text = currencyFormatter.stringFromNumber(value)
-    }
-
-    // MARK: Public
-
-    public var numberValue: NSNumber? {
-        guard let textValue = text,
-            numberValue = currencyFormatter.numberFromString(textValue) else { return nil }
-
-        return numberValue
     }
 
 }
