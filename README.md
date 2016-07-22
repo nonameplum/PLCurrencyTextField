@@ -12,7 +12,7 @@ To start using the component add it to your project using CocoaPods, Carthage or
 
 ## Requirements
 
-Swift 2.2, iOS 9.0
+Swift 2.2, iOS 8.0
 
 ## Installation
 
@@ -61,7 +61,7 @@ github "CurrencyTextField"
 
 Run `carthage update` to build the framework and drag the built `CurrencyTextField.framework` into your Xcode project.
 
-#### Manual
+### Manual
 
 You can download the latest files from our [Releases page](https://github.com/nonameplum/CurrencyTextField/releases). After doing so, drag `CurrencyTextField.xcodeproj` into your project in Xcode, and for your project target on ***General*** tab in ***Embedded Binaries*** section add `CurrencyTextField.framework`. Example project is configured the same way, so you have the crib sheet.
 
