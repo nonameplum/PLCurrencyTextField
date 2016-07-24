@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FADE32EE1D414C6D00131D94"
-               BuildableName = "CurrencyTextField.framework"
-               BlueprintName = "CurrencyTextField iOS"
-               ReferencedContainer = "container:CurrencyTextField.xcodeproj">
+               BuildableName = "PLCurrencyTextField.framework"
+               BlueprintName = "PLCurrencyTextField iOS"
+               ReferencedContainer = "container:PLCurrencyTextField.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FADE32EE1D414C6D00131D94"
-            BuildableName = "CurrencyTextField.framework"
-            BlueprintName = "CurrencyTextField iOS"
-            ReferencedContainer = "container:CurrencyTextField.xcodeproj">
+            BuildableName = "PLCurrencyTextField.framework"
+            BlueprintName = "PLCurrencyTextField iOS"
+            ReferencedContainer = "container:PLCurrencyTextField.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FADE32EE1D414C6D00131D94"
-            BuildableName = "CurrencyTextField.framework"
-            BlueprintName = "CurrencyTextField iOS"
-            ReferencedContainer = "container:CurrencyTextField.xcodeproj">
+            BuildableName = "PLCurrencyTextField.framework"
+            BlueprintName = "PLCurrencyTextField iOS"
+            ReferencedContainer = "container:PLCurrencyTextField.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

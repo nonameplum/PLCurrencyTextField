@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CurrencyTextField: UITextField {
+public class PLCurrencyTextField: UITextField {
 
     // MARK: - Types
 

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FADE32F31D414C6D00131D94 /* CurrencyTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = FADE32F21D414C6D00131D94 /* CurrencyTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FADE32FB1D4150EF00131D94 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE32FA1D4150EF00131D94 /* CurrencyTextField.swift */; };
+		FADE32F31D414C6D00131D94 /* PLCurrencyTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = FADE32F21D414C6D00131D94 /* PLCurrencyTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FADE32FB1D4150EF00131D94 /* PLCurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE32FA1D4150EF00131D94 /* PLCurrencyTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FABDD63B1D4156BA0032A36A /* CurrencyTextField.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CurrencyTextField.podspec; sourceTree = "<group>"; };
-		FADE32EF1D414C6D00131D94 /* CurrencyTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CurrencyTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FADE32F21D414C6D00131D94 /* CurrencyTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyTextField.h; sourceTree = "<group>"; };
+		FADE32EF1D414C6D00131D94 /* PLCurrencyTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PLCurrencyTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FADE32F21D414C6D00131D94 /* PLCurrencyTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLCurrencyTextField.h; sourceTree = "<group>"; };
 		FADE32F91D414DBF00131D94 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		FADE32FA1D4150EF00131D94 /* CurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		FADE32FA1D4150EF00131D94 /* PLCurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLCurrencyTextField.swift; sourceTree = "<group>"; };
 		FADE32FD1D4154C900131D94 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		FADE32FE1D4154C900131D94 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 		FADE32F01D414C6D00131D94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FADE32EF1D414C6D00131D94 /* CurrencyTextField.framework */,
+				FADE32EF1D414C6D00131D94 /* PLCurrencyTextField.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,9 +60,9 @@
 		FADE32F81D414D1100131D94 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FADE32F21D414C6D00131D94 /* CurrencyTextField.h */,
+				FADE32F21D414C6D00131D94 /* PLCurrencyTextField.h */,
 				FADE32F91D414DBF00131D94 /* Info-iOS.plist */,
-				FADE32FA1D4150EF00131D94 /* CurrencyTextField.swift */,
+				FADE32FA1D4150EF00131D94 /* PLCurrencyTextField.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -84,16 +84,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADE32F31D414C6D00131D94 /* CurrencyTextField.h in Headers */,
+				FADE32F31D414C6D00131D94 /* PLCurrencyTextField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		FADE32EE1D414C6D00131D94 /* CurrencyTextField iOS */ = {
+		FADE32EE1D414C6D00131D94 /* PLCurrencyTextField iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FADE32F71D414C6D00131D94 /* Build configuration list for PBXNativeTarget "CurrencyTextField iOS" */;
+			buildConfigurationList = FADE32F71D414C6D00131D94 /* Build configuration list for PBXNativeTarget "PLCurrencyTextField iOS" */;
 			buildPhases = (
 				FADE32EA1D414C6D00131D94 /* Sources */,
 				FADE32EB1D414C6D00131D94 /* Frameworks */,
@@ -104,9 +104,9 @@
 			);
 			dependencies = (
 			);
-			name = "CurrencyTextField iOS";
+			name = "PLCurrencyTextField iOS";
 			productName = "CurrencyTextField iOS";
-			productReference = FADE32EF1D414C6D00131D94 /* CurrencyTextField.framework */;
+			productReference = FADE32EF1D414C6D00131D94 /* PLCurrencyTextField.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -123,7 +123,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA2BF0151D414AD8003305B1 /* Build configuration list for PBXProject "CurrencyTextField" */;
+			buildConfigurationList = FA2BF0151D414AD8003305B1 /* Build configuration list for PBXProject "PLCurrencyTextField" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -135,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FADE32EE1D414C6D00131D94 /* CurrencyTextField iOS */,
+				FADE32EE1D414C6D00131D94 /* PLCurrencyTextField iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -155,7 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADE32FB1D4150EF00131D94 /* CurrencyTextField.swift in Sources */,
+				FADE32FB1D4150EF00131D94 /* PLCurrencyTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +226,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.CurrencyTextField-iOS";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.PLCurrencyTextField-iOS";
+				PRODUCT_NAME = PLCurrencyTextField;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -278,8 +278,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.CurrencyTextField-iOS";
-				PRODUCT_NAME = "$(PROJECT_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.PLCurrencyTextField-iOS";
+				PRODUCT_NAME = PLCurrencyTextField;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -292,7 +292,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA2BF0151D414AD8003305B1 /* Build configuration list for PBXProject "CurrencyTextField" */ = {
+		FA2BF0151D414AD8003305B1 /* Build configuration list for PBXProject "PLCurrencyTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA2BF0161D414AD8003305B1 /* Debug */,
@@ -301,7 +301,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FADE32F71D414C6D00131D94 /* Build configuration list for PBXNativeTarget "CurrencyTextField iOS" */ = {
+		FADE32F71D414C6D00131D94 /* Build configuration list for PBXNativeTarget "PLCurrencyTextField iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FADE32F51D414C6D00131D94 /* Debug */,
