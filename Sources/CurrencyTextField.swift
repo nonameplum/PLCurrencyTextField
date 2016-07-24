@@ -48,7 +48,7 @@ public class CurrencyTextField: UITextField {
         }
     }
 
-    /// Configure local that will be used by the internal number formatter
+    /// Configure locale that will be used by the internal number formatter
     public var locale: NSLocale {
         didSet {
             currencyFormatter.locale = locale
