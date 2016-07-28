@@ -12,7 +12,40 @@
 		FAE25C161D4AAA010066C715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE25C141D4AAA010066C715 /* Main.storyboard */; };
 		FAE25C181D4AAA010066C715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE25C171D4AAA010066C715 /* Assets.xcassets */; };
 		FAE25C1B1D4AAA010066C715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE25C191D4AAA010066C715 /* LaunchScreen.storyboard */; };
+		FAE25C281D4AAA2C0066C715 /* PLCurrencyTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE25C271D4AAA1F0066C715 /* PLCurrencyTextField.framework */; };
+		FAE25C291D4AAA2C0066C715 /* PLCurrencyTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAE25C271D4AAA1F0066C715 /* PLCurrencyTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAE25C261D4AAA1F0066C715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAE25C221D4AAA1F0066C715 /* PLCurrencyTextField.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FADE32EF1D414C6D00131D94;
+			remoteInfo = "PLCurrencyTextField iOS";
+		};
+		FAE25C2A1D4AAA2C0066C715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAE25C221D4AAA1F0066C715 /* PLCurrencyTextField.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FADE32EE1D414C6D00131D94;
+			remoteInfo = "PLCurrencyTextField iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAE25C2C1D4AAA2C0066C715 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FAE25C291D4AAA2C0066C715 /* PLCurrencyTextField.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FAE25C0D1D4AAA010066C715 /* PLCurrencyTextField-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PLCurrencyTextField-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +55,7 @@
 		FAE25C171D4AAA010066C715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE25C1A1D4AAA010066C715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAE25C1C1D4AAA010066C715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE25C221D4AAA1F0066C715 /* PLCurrencyTextField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PLCurrencyTextField.xcodeproj; path = ../../PLCurrencyTextField.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE25C281D4AAA2C0066C715 /* PLCurrencyTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +73,7 @@
 		FAE25C041D4AAA010066C715 = {
 			isa = PBXGroup;
 			children = (
+				FAE25C221D4AAA1F0066C715 /* PLCurrencyTextField.xcodeproj */,
 				FAE25C0F1D4AAA010066C715 /* PLCurrencyTextField-Example */,
 				FAE25C0E1D4AAA010066C715 /* Products */,
 			);
@@ -64,6 +100,14 @@
 			path = "PLCurrencyTextField-Example";
 			sourceTree = "<group>";
 		};
+		FAE25C231D4AAA1F0066C715 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAE25C271D4AAA1F0066C715 /* PLCurrencyTextField.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,10 +118,12 @@
 				FAE25C091D4AAA010066C715 /* Sources */,
 				FAE25C0A1D4AAA010066C715 /* Frameworks */,
 				FAE25C0B1D4AAA010066C715 /* Resources */,
+				FAE25C2C1D4AAA2C0066C715 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FAE25C2B1D4AAA2C0066C715 /* PBXTargetDependency */,
 			);
 			name = "PLCurrencyTextField-Example";
 			productName = "PLCurrencyTextField-Example";
@@ -111,12 +157,28 @@
 			mainGroup = FAE25C041D4AAA010066C715;
 			productRefGroup = FAE25C0E1D4AAA010066C715 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FAE25C231D4AAA1F0066C715 /* Products */;
+					ProjectRef = FAE25C221D4AAA1F0066C715 /* PLCurrencyTextField.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FAE25C0C1D4AAA010066C715 /* PLCurrencyTextField-Example */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FAE25C271D4AAA1F0066C715 /* PLCurrencyTextField.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PLCurrencyTextField.framework;
+			remoteRef = FAE25C261D4AAA1F0066C715 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FAE25C0B1D4AAA010066C715 /* Resources */ = {
@@ -142,6 +204,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAE25C2B1D4AAA2C0066C715 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PLCurrencyTextField iOS";
+			targetProxy = FAE25C2A1D4AAA2C0066C715 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAE25C141D4AAA010066C715 /* Main.storyboard */ = {
@@ -252,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "PLCurrencyTextField-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.PLCurrencyTextField-Example";
@@ -263,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "PLCurrencyTextField-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.PLCurrencyTextField-Example";

@@ -2,6 +2,8 @@
 
 ![Version](https://img.shields.io/badge/Version-1.0.0-orange.svg?style=flat)[![Swift](https://img.shields.io/badge/Swift-2.2-brightgreen.svg?style=flat)](https://swift.org)![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)![CocoaPods](https://img.shields.io/badge/Cocoapods-compatible-green.svg?style=flat)![Carthage](https://img.shields.io/badge/Carthage-compatible-green.svg?style=flat)
 
+![PLCurrencyTextField](Assets/PLCurrencyTextField.gif)
+
 ## Summary
 
 `PLCurrencyTextField` provide simple and user friendly support for the amount in the currency.
@@ -9,6 +11,16 @@
 ## Usage
 
 To start using the component add it to your project using CocoaPods, Carthage or manually then to create `PLCurrencyTextField` intance put `UITextField` using *Interface builder* and change its class to `PLCurrencyTextField` in *Identity inspector* or do it from code.
+
+### Configuration
+
+* `minimumFractionDigits` - Configure the minium fraction digits count that will be used by the internal number formatter
+* `maximumFractionDigits` - Configure the maximum fraction digits count that will be used by the internal number formatter
+* `locale` - Configure locale that will be used by the internal number formatter
+
+### Helpers
+
+* `numberValue` - Returns current number value
 
 ## Requirements
 
