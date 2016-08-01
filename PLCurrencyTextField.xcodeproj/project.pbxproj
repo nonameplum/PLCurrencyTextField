@@ -11,8 +11,25 @@
 		FADE32FB1D4150EF00131D94 /* PLCurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE32FA1D4150EF00131D94 /* PLCurrencyTextField.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FA70D1EF1D4FA69000F80AE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA70D1EA1D4FA69000F80AE3 /* PLCurrencyTextField-Example.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FAE25C0D1D4AAA010066C715;
+			remoteInfo = "PLCurrencyTextField-Example";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		FABDD63B1D4156BA0032A36A /* CurrencyTextField.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CurrencyTextField.podspec; sourceTree = "<group>"; };
+		FA70D1E21D4FA69000F80AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA70D1E31D4FA69000F80AE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA70D1E51D4FA69000F80AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA70D1E71D4FA69000F80AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA70D1E81D4FA69000F80AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA70D1E91D4FA69000F80AE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA70D1EA1D4FA69000F80AE3 /* PLCurrencyTextField-Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "PLCurrencyTextField-Example.xcodeproj"; sourceTree = "<group>"; };
+		FABDD63B1D4156BA0032A36A /* PLCurrencyTextField.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = PLCurrencyTextField.podspec; sourceTree = "<group>"; };
 		FADE32EF1D414C6D00131D94 /* PLCurrencyTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PLCurrencyTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADE32F21D414C6D00131D94 /* PLCurrencyTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLCurrencyTextField.h; sourceTree = "<group>"; };
 		FADE32F91D414DBF00131D94 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -42,9 +59,40 @@
 			);
 			sourceTree = "<group>";
 		};
+		FA70D1E01D4FA69000F80AE3 /* PLCurrencyTextField-Example */ = {
+			isa = PBXGroup;
+			children = (
+				FA70D1E11D4FA69000F80AE3 /* PLCurrencyTextField-Example */,
+				FA70D1EA1D4FA69000F80AE3 /* PLCurrencyTextField-Example.xcodeproj */,
+			);
+			path = "PLCurrencyTextField-Example";
+			sourceTree = "<group>";
+		};
+		FA70D1E11D4FA69000F80AE3 /* PLCurrencyTextField-Example */ = {
+			isa = PBXGroup;
+			children = (
+				FA70D1E21D4FA69000F80AE3 /* AppDelegate.swift */,
+				FA70D1E31D4FA69000F80AE3 /* Assets.xcassets */,
+				FA70D1E41D4FA69000F80AE3 /* LaunchScreen.storyboard */,
+				FA70D1E61D4FA69000F80AE3 /* Main.storyboard */,
+				FA70D1E81D4FA69000F80AE3 /* Info.plist */,
+				FA70D1E91D4FA69000F80AE3 /* ViewController.swift */,
+			);
+			path = "PLCurrencyTextField-Example";
+			sourceTree = "<group>";
+		};
+		FA70D1EB1D4FA69000F80AE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA70D1F01D4FA69000F80AE3 /* PLCurrencyTextField-Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FABDD63C1D41582C0032A36A /* Example iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FA70D1E01D4FA69000F80AE3 /* PLCurrencyTextField-Example */,
 			);
 			path = "Example iOS";
 			sourceTree = "<group>";
@@ -72,7 +120,7 @@
 			children = (
 				FADE32FD1D4154C900131D94 /* LICENSE.md */,
 				FADE32FE1D4154C900131D94 /* README.md */,
-				FABDD63B1D4156BA0032A36A /* CurrencyTextField.podspec */,
+				FABDD63B1D4156BA0032A36A /* PLCurrencyTextField.podspec */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -129,16 +177,33 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FA2BF0111D414AD8003305B1;
 			productRefGroup = FADE32F01D414C6D00131D94 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA70D1EB1D4FA69000F80AE3 /* Products */;
+					ProjectRef = FA70D1EA1D4FA69000F80AE3 /* PLCurrencyTextField-Example.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FADE32EE1D414C6D00131D94 /* PLCurrencyTextField iOS */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA70D1F01D4FA69000F80AE3 /* PLCurrencyTextField-Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "PLCurrencyTextField-Example.app";
+			remoteRef = FA70D1EF1D4FA69000F80AE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FADE32ED1D414C6D00131D94 /* Resources */ = {
@@ -160,6 +225,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA70D1E41D4FA69000F80AE3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA70D1E51D4FA69000F80AE3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA70D1E61D4FA69000F80AE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA70D1E71D4FA69000F80AE3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FA2BF0161D414AD8003305B1 /* Debug */ = {

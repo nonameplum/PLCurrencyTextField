@@ -361,6 +361,7 @@
 				FAE25C211D4AAA010066C715 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

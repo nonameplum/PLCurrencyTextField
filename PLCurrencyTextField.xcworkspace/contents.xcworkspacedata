@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:/Users/macbook/Documents/Development/My/CurrencyTextField/PLCurrencyTextField.xcodeproj">
+      location = "container:PLCurrencyTextField.xcodeproj">
    </FileRef>
 </Workspace>
