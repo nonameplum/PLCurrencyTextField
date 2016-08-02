@@ -6,21 +6,21 @@
 
 ## Summary
 
-`PLCurrencyTextField` provide simple and user friendly support for the amount in the currency.
+`PLCurrencyTextField` provides simple and user friendly support for the amount in the currency.
 
 ## Usage
 
-To start using the component add it to your project using CocoaPods, Carthage or manually then to create `PLCurrencyTextField` intance put `UITextField` using *Interface builder* and change its class to `PLCurrencyTextField` in *Identity inspector* or do it from code.
+To start using the component add it to your project using CocoaPods, Carthage or manually then to create `PLCurrencyTextField` instance put `UITextField` using *Interface builder* and change its class to `PLCurrencyTextField` in *Identity inspector* or do it from code.
 
 ### Configuration
 
-* `minimumFractionDigits` - Configure the minium fraction digits count that will be used by the internal number formatter
-* `maximumFractionDigits` - Configure the maximum fraction digits count that will be used by the internal number formatter
-* `locale` - Configure locale that will be used by the internal number formatter
+* `minimumFractionDigits` - Configure the minimum fraction digits count that will be used by the internal number formatter.
+* `maximumFractionDigits` - Configure the maximum fraction digits count that will be used by the internal number formatter.
+* `locale` - Configure locale that will be used by the internal number formatter.
 
 ### Helpers
 
-* `numberValue` - Returns current number value
+* `numberValue` - Returns current number value.
 
 ## Requirements
 
