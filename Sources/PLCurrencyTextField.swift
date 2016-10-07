@@ -8,32 +8,32 @@
 
 import UIKit
 
-public class PLCurrencyTextField: UITextField {
+open class PLCurrencyTextField: UITextField {
 
     // MARK: - Types
 
-    private enum InitMethod {
-        case Coder(NSCoder)
-        case Frame(CGRect)
+    fileprivate enum InitMethod {
+        case coder(NSCoder)
+        case frame(CGRect)
     }
 
     // MARK: - Properties
 
-    private let currencyFormatter: NSNumberFormatter
-    private let internalNumberFormatter: NSNumberFormatter
+    fileprivate let currencyFormatter: NumberFormatter
+    fileprivate let internalNumberFormatter: NumberFormatter
 
     // MARK: Public
 
     /// Returns current number value
-    public var numberValue: NSNumber? {
+    open var numberValue: NSNumber? {
         guard let textValue = text,
-            numberValue = currencyFormatter.numberFromString(textValue) else { return nil }
+            let numberValue = currencyFormatter.number(from: textValue) else { return nil }
 
         return numberValue
     }
 
     /// Configure the minium fraction digits count that will be used by the internal number formatter
-    public var minimumFractionDigits: Int {
+    open var minimumFractionDigits: Int {
         didSet {
             currencyFormatter.minimumFractionDigits = minimumFractionDigits
             internalNumberFormatter.minimumFractionDigits = minimumFractionDigits
@@ -41,7 +41,7 @@ public class PLCurrencyTextField: UITextField {
     }
 
     /// Configure the maximum fraction digits count that will be used by the internal number formatter
-    public var maximumFractionDigits: Int {
+    open var maximumFractionDigits: Int {
         didSet {
             currencyFormatter.maximumFractionDigits = maximumFractionDigits
             internalNumberFormatter.maximumFractionDigits = maximumFractionDigits
@@ -49,7 +49,7 @@ public class PLCurrencyTextField: UITextField {
     }
 
     /// Configure locale that will be used by the internal number formatter
-    public var locale: NSLocale {
+    open var locale: Locale {
         didSet {
             currencyFormatter.locale = locale
             internalNumberFormatter.locale = locale
@@ -58,13 +58,13 @@ public class PLCurrencyTextField: UITextField {
 
     // MARK: - Initialization
 
-    private init(_ initMethod: InitMethod) {
-        self.currencyFormatter = NSNumberFormatter()
-        self.internalNumberFormatter = NSNumberFormatter()
+    fileprivate init(_ initMethod: InitMethod) {
+        self.currencyFormatter = NumberFormatter()
+        self.internalNumberFormatter = NumberFormatter()
         self.locale = self.currencyFormatter.locale
 
-        currencyFormatter.numberStyle = .CurrencyStyle
-        internalNumberFormatter.numberStyle = .DecimalStyle
+        currencyFormatter.numberStyle = .currency
+        internalNumberFormatter.numberStyle = .decimal
         internalNumberFormatter.groupingSeparator = ""
 
         internalNumberFormatter.minimumFractionDigits = currencyFormatter.minimumFractionDigits
@@ -74,63 +74,64 @@ public class PLCurrencyTextField: UITextField {
         maximumFractionDigits = currencyFormatter.maximumFractionDigits
 
         switch initMethod {
-        case .Coder(let coder): super.init(coder: coder)!
-        case .Frame(let frame): super.init(frame: frame)
+        case .coder(let coder): super.init(coder: coder)!
+        case .frame(let frame): super.init(frame: frame)
         }
 
-        keyboardType = .DecimalPad
+        keyboardType = .decimalPad
 
-        addTarget(self, action: #selector(textFieldEditingDidBegin(_:)), forControlEvents: UIControlEvents.EditingDidBegin)
-        addTarget(self, action: #selector(textFieldEditingChanged(_:)), forControlEvents: UIControlEvents.EditingChanged)
-        addTarget(self, action: #selector(textFieldEditingDidEnd(_:)), forControlEvents: UIControlEvents.EditingDidEnd)
+        addTarget(self, action: #selector(textFieldEditingDidBegin(_:)), for: UIControlEvents.editingDidBegin)
+        addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: UIControlEvents.editingChanged)
+        addTarget(self, action: #selector(textFieldEditingDidEnd(_:)), for: UIControlEvents.editingDidEnd)
     }
 
     override convenience public init(frame: CGRect) {
-        self.init(.Frame(frame))
+        self.init(.frame(frame))
     }
 
     required convenience public init?(coder aDecoder: NSCoder) {
-        self.init(.Coder(aDecoder))
+        self.init(.coder(aDecoder))
     }
 
     // MARK: - Actions
 
-    internal func textFieldEditingDidBegin(sender: UITextField) {
+    internal func textFieldEditingDidBegin(_ sender: UITextField) {
         guard let value = numberValue else { return }
 
-        text = internalNumberFormatter.stringFromNumber(value)
+        text = internalNumberFormatter.string(from: value)
     }
 
-    internal func textFieldEditingChanged(sender: UITextField) {
-        guard let textValue = text where textValue.containsString(currencyFormatter.decimalSeparator) else { return }
+    internal func textFieldEditingChanged(_ sender: UITextField) {
+        guard let textValue = text, textValue.contains(currencyFormatter.decimalSeparator) else { return }
 
         if currencyFormatter.maximumFractionDigits == 0 {
-            text = textValue.stringByReplacingOccurrencesOfString(currencyFormatter.decimalSeparator, withString: "")
+            text = textValue.replacingOccurrences(of: currencyFormatter.decimalSeparator, with: "")
         } else {
             let decimalFixedValue: String
-            if textValue.componentsSeparatedByString(currencyFormatter.decimalSeparator).count-1 > 1 {
-                let lastSeparatorRange = textValue.rangeOfString(
-                    currencyFormatter.decimalSeparator,
-                    options: NSStringCompareOptions.BackwardsSearch,
+            
+            if textValue.components(separatedBy: currencyFormatter.decimalSeparator).count-1 > 1 {
+                let lastSeparatorRange = textValue.range(
+                    of: currencyFormatter.decimalSeparator,
+                    options: NSString.CompareOptions.backwards,
                     range: textValue.startIndex..<textValue.endIndex,
                     locale: currencyFormatter.locale)
 
-                decimalFixedValue = textValue.stringByReplacingOccurrencesOfString(
-                    currencyFormatter.decimalSeparator,
-                    withString: "",
-                    options: [NSStringCompareOptions.BackwardsSearch],
+                decimalFixedValue = textValue.replacingOccurrences(
+                    of: currencyFormatter.decimalSeparator,
+                    with: "",
+                    options: [NSString.CompareOptions.backwards],
                     range: lastSeparatorRange)
             } else {
                 decimalFixedValue = textValue
             }
 
-            let splittedNumberBySeparator = decimalFixedValue.componentsSeparatedByString(currencyFormatter.decimalSeparator)
+            let splittedNumberBySeparator = decimalFixedValue.components(separatedBy: currencyFormatter.decimalSeparator)
 
             if splittedNumberBySeparator.count > 1,
                 let number = splittedNumberBySeparator.first,
-                fractionalDigits = splittedNumberBySeparator.last,
-                case let removeCount = fractionalDigits.characters.count - currencyFormatter.maximumFractionDigits where removeCount > 0 {
-                let removedFraction = fractionalDigits.substringWithRange(fractionalDigits.startIndex..<fractionalDigits.endIndex.advancedBy(-removeCount))
+                let fractionalDigits = splittedNumberBySeparator.last,
+                case let removeCount = fractionalDigits.characters.count - currencyFormatter.maximumFractionDigits, removeCount > 0 {
+                let removedFraction = fractionalDigits.substring(with: fractionalDigits.startIndex..<fractionalDigits.characters.index(fractionalDigits.endIndex, offsetBy: -removeCount))
                 text = number + currencyFormatter.decimalSeparator + removedFraction
             } else {
                 text = decimalFixedValue
@@ -138,11 +139,11 @@ public class PLCurrencyTextField: UITextField {
         }
     }
 
-    internal func textFieldEditingDidEnd(sender: UITextField) {
+    internal func textFieldEditingDidEnd(_ sender: UITextField) {
         guard let textValue = text,
-            value = internalNumberFormatter.numberFromString(textValue) else { return }
+            let value = internalNumberFormatter.number(from: textValue) else { return }
 
-        text = currencyFormatter.stringFromNumber(value)
+        text = currencyFormatter.string(from: value)
     }
 
 }

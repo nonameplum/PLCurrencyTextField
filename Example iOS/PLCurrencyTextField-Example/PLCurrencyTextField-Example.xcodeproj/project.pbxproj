@@ -143,6 +143,7 @@
 					FAE25C0C1D4AAA010066C715 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5U27QHVP2P;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -327,6 +328,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.PLCurrencyTextField-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -339,6 +341,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.plum.PLCurrencyTextField-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
